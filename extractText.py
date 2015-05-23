@@ -2,7 +2,7 @@ from requests import get
 from collections import Counter
 from lxml import html
 import sys
-
+import re
 reddit_request = get(sys.argv[1])
 #wiki_request = get('http://en.wikipedia.org/wiki/Information_extraction')
 
@@ -32,7 +32,15 @@ def stringify_children(node):
     # filter removes possible Nones in texts and tails
     return ''.join(filter(None, parts))
 
-print stringify_children(parents_with_children_counts[0][0])
+texts = []
+sizes = []
+for i in range (0,3):
+        texts.append( stringify_children(parents_with_children_counts[i][0]))
+        sizes.append(len(texts[i]))
+goodText = texts[sizes.index(max(sizes))]
+
+print re.sub('<[^>]+>', '', goodText)
+
 #print stringify_children(parents_with_children_counts[0][0][1])
 #print stringify_children(parents_with_children_counts[0][0][2])
 #print stringify_children(parents_with_children_counts[0][0][3])
