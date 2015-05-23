@@ -32,7 +32,8 @@ def stringify_children(node):
     # filter removes possible Nones in texts and tails
     return ''.join(filter(None, parts))
 
-print stringify_children(parents_with_children_counts[0][0][0])
-print stringify_children(parents_with_children_counts[0][0][1])
-print stringify_children(parents_with_children_counts[0][0][2])
-print stringify_children(parents_with_children_counts[0][0][3])
+print stringify_children(parents_with_children_counts[0][0])
+#print stringify_children(parents_with_children_counts[0][0][1])
+#print stringify_children(parents_with_children_counts[0][0][2])
+#print stringify_children(parents_with_children_counts[0][0][3])
+#print stringify_children(parents_with_children_counts[0][0][4])
