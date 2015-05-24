@@ -1,4 +1,4 @@
-from pyteaser import SummarizeUrl
+from pyteaser import SummarizeUrl, Summarize
 import sys
 import duckduckgo as d
 
@@ -23,23 +23,23 @@ import duckduckgo as d
 
 def shortSummaryFromQuery(query):
 	g = d.get_zci(query, True)
-	# if "(" in g:
-	# 	return g
-	# else:
-	return SummarizeUrl(g, 5)
+	if "(" in g:
+		return Summarize(query, g, 5)
+	else:
+		return SummarizeUrl(g, 5)
 
 
 def longSummaryFromQuery(query):
 	g = d.get_zci(query, True)
-	# if "(" in g:
-	# 	return g
-	# else:
-	return SummarizeUrl(g, 15)
+	if "(" in g:
+		return Summarize(query, g, 15)
+	else:
+		return SummarizeUrl(g, 15)
 
 
 def wholeArticleFromQuery(query):
 	g = d.get_zci(query, True)
-	# if "(" in g:
-	# 	return g
-	# else:
-	return SummarizeUrl(g, 1500)
+	if "(" in g:
+	 	return Summarize(query, g, 1500)
+	else:
+		return SummarizeUrl(g, 1500)
