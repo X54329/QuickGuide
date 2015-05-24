@@ -22,22 +22,24 @@ import duckduckgo as d
 
 
 def shortSummaryFromQuery(query):
-    g = d.get_zci(q, True)
-    if "(" in g:
-    	return g
-    else:
-    	return SummarizeUrl(g, 5)
+	g = d.get_zci(query, True)
+	# if "(" in g:
+	# 	return g
+	# else:
+	return SummarizeUrl(g, 5)
+
 
 def longSummaryFromQuery(query):
-	g = d.get_zci(q, True)
-    if "(" in g:
-    	return g
-    else:
-    	return SummarizeUrl(g, 15)
+	g = d.get_zci(query, True)
+	# if "(" in g:
+	# 	return g
+	# else:
+	return SummarizeUrl(g, 15)
+
 
 def wholeArticleFromQuery(query):
-	g = d.get_zci(q, True)
-    if "(" in g:
-    	return g
-    else:
-    	return SummarizeUrl(g, 1500)
+	g = d.get_zci(query, True)
+	# if "(" in g:
+	# 	return g
+	# else:
+	return SummarizeUrl(g, 1500)
